@@ -1,0 +1,6 @@
+requests>=2.23.0
+torch==1.10.1
+onnxruntime-gpu==1.10.0
+onnx>=1.10.2
+transformers>=4.15.0
+sentencepiece>=0.1.95
