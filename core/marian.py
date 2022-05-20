@@ -121,7 +121,7 @@ class MarianOnnx(GenerationMixin):
                 next_tokens * unfinished_sequences + (pad_token_id) * (1 - unfinished_sequences)
 
             input_ids = torch.cat([input_ids, next_tokens[:, None]], dim=-1)
-            input_ids[input_ids[:, -2] == 0, -1] = eos_token_id
+            input_ids[input_ids[:, -2] == eos_token_id, -1] = eos_token_id
             unfinished_sequences = unfinished_sequences.mul((next_tokens != eos_token_id).char())
 
             if unfinished_sequences.max() == 0:
